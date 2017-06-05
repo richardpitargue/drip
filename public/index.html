@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Drip</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast.min.css" />
+        <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast-animations.min.css" />
+        <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" />
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body ng-app="app">
+        <div ng-view="">
+        </div>
+
+        <toast></toast>
+
+        <!-- dependencies -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/ngToast/dist/ngToast.js"></script>
+        <script src="bower_components/leaflet/dist/leaflet.js"></script>
+        <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+        <script src="bower_components/highcharts/highcharts.js"></script>
+
+        <!-- app.js -->
+        <script src="app.js"></script>
+
+        <!-- services -->
+        <script src="services/authService.js"></script>
+        <script src="services/helperService.js"></script>
+        <script src="services/farmService.js"></script>
+
+        <!-- directives -->
+
+        <!-- controllers -->
+        <script src="controllers/signin.controller.js"></script>
+        <script src="controllers/landing.controller.js"></script>
+        <script src="controllers/dashboard.controller.js"></script>
+        <script src="controllers/createFarm.controller.js"></script>
+        <script src="controllers/createAccount.controller.js"></script>
+        <script src="controllers/public.controller.js"></script>
+
+    </body>
+</html>

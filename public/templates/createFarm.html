@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="waiss-explore-map"></div>
+        </div>
+        <div class="col-md-6">
+            <div ng-submit="createFarm()">
+                <form class="form-container">
+                    <div class="form-group">
+                        <label for="nameField">Name</label>
+                        <input id="nameField" type="text" class="form-control" ng-model="name" placeholder="Farm name">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input id="public-checkbox" type="checkbox"> Public
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="locationField">Location</label>
+                        <select id="locationField" class="form-control" ng-model="location" ng-options="location as location.name for location in locations track by location._id"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cropField">Crop</label>
+                        <select id="cropField" class="form-control" ng-model="crop" ng-options="crop as crop.name for crop in crops"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="varietyField">Variety</label>
+                        <select id="varietyField" class="form-control" ng-model="variety" ng-options="variety for variety in crop.variety"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="plantingDateField">Planting Date</label>
+                        <div id="plantingDateField" class="input-group date">
+                            <input type="text" class="form-control" ng-model="plantingDate">
+                            <div class="input-group-addon">
+                            <sp an class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

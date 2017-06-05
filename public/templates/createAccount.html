@@ -1,0 +1,18 @@
+<div class="signin-container">
+    <div ng-submit="register()">
+        <form class="form-container">
+          <div class="form-group">
+            <label for="createEmailField">E-mail</label>
+            <input id="createEmailField" type="email" class="form-control" ng-model="email" placeholder="E-mail">
+          </div>
+          <div class="form-group">
+            <label for="createPasswordField">Password</label>
+            <input id="createPasswordField" type="password" class="form-control" ng-model="password" placeholder="Password">
+          </div>
+          <button class="btn btn-primary btn-block">Sign Up</button>
+        </form>
+        <div class="alert alert-danger" ng-hide="hideErrorMessage">
+            <p>{{message}}</p>
+        </div>
+    </div>
+</div>

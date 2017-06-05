@@ -1,0 +1,128 @@
+/* navbar */
+.navbar-default {
+    background-color: #101826;
+    border-color: #E7E7E7;
+}
+/* Title */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #333;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+/* Caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* Mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #DDD;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #CCC;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+          color: #333;
+    }
+}
+
+/*.navbar-nav > li > a, .navbar-brand {
+    padding-top: 7px !important;
+    padding-bottom: 0 !important;
+    height: 35px;
+}
+.navbar {
+    min-height: 35px !important;
+}*/
+
+.signin-container {
+    max-width: 33%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.form-container {
+    margin-bottom: 25px;
+}
+
+#waiss-explore-map {
+    width: 100%;
+    height: 100vh;
+}
+
+.farm-item {
+    cursor: pointer;
+}
+
+.farm-item:hover {
+    background-color: #f5f5f5;
+}
+
+.loading {
+  font-size: 70px;
+  text-align: center;
+}
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 1500ms infinite;
+  animation: ellipsis steps(4,end) 1500ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
