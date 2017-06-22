@@ -133,7 +133,7 @@ function DashboardController($scope, $location, ngToast, User, FarmService, Auth
                         zoomType: 'x'
                     },
                     title: {
-                        text: 'Water Deficit',
+                        text: 'Soil Moisture',
                         x: -20 //center
                     },
                     xAxis: {
