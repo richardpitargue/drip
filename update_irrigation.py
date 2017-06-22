@@ -14,7 +14,7 @@ cropId = opts[4]
 
 db = MongoClient().waiss
 
-crop_info = get('http://http://159.203.253.4:3000/api/crop/{id}'.format(id=cropId)).json()
+crop_info = get('http://localhost:3000/api/crop/{id}'.format(id=cropId)).json()
 
 farm = db.farms.find_one({
     '_id': ObjectId(farmId)
@@ -50,7 +50,7 @@ if start is not None:
     })
 
     while info is not None:
-        result = get('http://http://159.203.253.4:3001/data/{id}/waterdeficit/{d}-{m}-{y}'.format(id=farm['location']['stationId'], d=start_update.day, m=start_update.month, y=start_update.year))
+        result = get('http://localhost:3001/data/{id}/waterdeficit/{d}-{m}-{y}'.format(id=farm['location']['stationId'], d=start_update.day, m=start_update.month, y=start_update.year))
         data = result.json()
 
         ETa = data['ET']['ave'] * compute_kc(info['maturity'])

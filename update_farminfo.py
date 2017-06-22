@@ -18,7 +18,7 @@ def compute_kc(maturity, crop_info):
             return crop_info['cropCoefficient'][2]
 
 for farm in db.farms.find():
-    crop_info = get('http://http://159.203.253.4:3000/api/crop/{id}'.format(id=farm['crop'])).json()
+    crop_info = get('http://localhost:3000/api/crop/{id}'.format(id=farm['crop'])).json()
     last_updated = (farm['updated'] - timedelta(days=1)).date()
     last_info = db.farminfos.find_one({
         'date.day': last_updated.day,
@@ -35,7 +35,7 @@ for farm in db.farms.find():
     current_date = last_updated + timedelta(days=1)
 
     while current_date < now:
-        result = get('http://http://159.203.253.4:3001/data/{id}/waterdeficit/{d}-{m}-{y}'.format(id=farm['location']['stationId'], d=current_date.day, m=current_date.month, y=current_date.year))
+        result = get('http://localhost:3001/data/{id}/waterdeficit/{d}-{m}-{y}'.format(id=farm['location']['stationId'], d=current_date.day, m=current_date.month, y=current_date.year))
         data = result.json()
 
         gdd = data['temp']['ave'] - 10
@@ -44,7 +44,7 @@ for farm in db.farms.find():
         ETa = data['ET']['ave'] * compute_kc(maturity, crop_info)
         water_deficit = ETa - data['rainfall']['ave'] + water_deficit
 
-        post('http://http://159.203.253.4:3000/api/farm/info', data={
+        post('http://localhost:3000/api/farm/info', data={
             'farmId': farm['_id'],
             'day': current_date.day,
             'month': current_date.month,

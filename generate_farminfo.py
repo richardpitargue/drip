@@ -20,7 +20,7 @@ water_deficit = 0
 cumulative_gdd = 0
 maturity = 0
 
-crop_info = get('http://http://159.203.253.4:3000/api/crop/{id}'.format(id=cropId)).json()
+crop_info = get('http://localhost:3000/api/crop/{id}'.format(id=cropId)).json()
 
 def compute_kc(maturity):
     if maturity < crop_info['cutoff'][0]:
