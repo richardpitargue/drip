@@ -20,7 +20,7 @@ water_deficit = 0
 cumulative_gdd = 0
 maturity = 0
 
-crop_info = get('http://localhost:3000/api/crop/{id}'.format(id=cropId)).json()
+crop_info = get('http://159.203.253.4:3000/api/crop/{id}'.format(id=cropId)).json()
 
 def compute_kc(maturity):
     if maturity < crop_info['cutoff'][0]:
@@ -34,7 +34,7 @@ def compute_kc(maturity):
         else:
             return crop_info['cropCoefficient'][2]
 
-post_result = post('http://localhost:3000/api/farm/info', data={
+post_result = post('http://159.203.253.4:3000/api/farm/info', data={
     'farmId': farmId,
     'day': day,
     'month': month,
@@ -49,7 +49,7 @@ post_result = post('http://localhost:3000/api/farm/info', data={
 current_date = current_date + timedelta(days=1)
 
 while current_date < now:
-    result = get('http://localhost:3001/data/{id}/waterdeficit/{d}-{m}-{y}'.format(id=stationId, d=current_date.day, m=current_date.month, y=current_date.year))
+    result = get('http://159.203.253.4:3001/data/{id}/waterdeficit/{d}-{m}-{y}'.format(id=stationId, d=current_date.day, m=current_date.month, y=current_date.year))
     data = result.json()
 
     gdd = data['temp']['ave'] - 10
@@ -58,7 +58,7 @@ while current_date < now:
     ETa = data['ET']['ave'] * compute_kc(maturity)
     water_deficit = ETa - data['rainfall']['ave'] + water_deficit
 
-    post('http://localhost:3000/api/farm/info', data={
+    post('http://159.203.253.4:3000/api/farm/info', data={
         'farmId': farmId,
         'day': current_date.day,
         'month': current_date.month,
